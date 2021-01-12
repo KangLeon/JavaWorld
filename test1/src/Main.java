@@ -24,7 +24,19 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        System.out.println(fib2(150));
+        TimeTool.check("fib1", new TimeTool.Task() {
+            @Override
+            public void execute() {
+                System.out.println(fib1(30));
+            }
+        });
+
+        TimeTool.check("fib2", new TimeTool.Task() {
+            @Override
+            public void execute() {
+                System.out.println(fib2(30));
+            }
+        });
     }
 }
 
