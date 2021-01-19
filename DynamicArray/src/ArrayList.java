@@ -1,4 +1,22 @@
- public class ArrayList {
+
+public class ArrayList {
+    //元素的数量
+    private int size;
+
+    //所有的元素
+    private int[] elements;
+
+    private static final int DEFAULT_CAPACITY = 10;
+
+    public ArrayList(int capacity) {
+        capacity = ( capacity < DEFAULT_CAPACITY) ? DEFAULT_CAPACITY : capacity;
+        elements = new int[capacity];
+    }
+
+    public ArrayList() {
+        this(DEFAULT_CAPACITY);
+    }
+
     //清除所有元素
      public void clear() {
 
@@ -11,7 +29,11 @@
 
      //是否为空
      public boolean isEmpty() {
-         return false;
+         if (size == 0){
+             return true;
+         }else {
+             return false;
+         }
      }
 
      //是否包含某个元素
@@ -26,7 +48,10 @@
 
      //获取index位置的元素
      public int get(int index){
-         return 0;
+         if (index<0||index>=size){
+             throw new IndexOutOfBoundsException("index:"+index+"size:"+size);
+         }
+         return elements[index];
      }
 
      //在index位置插入一个元素

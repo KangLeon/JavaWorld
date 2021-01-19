@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91de55ef-861f-407e-926a-1d24498cd6ad" name="Default Changelist" comment="">
+    <list default="true" id="91de55ef-861f-407e-926a-1d24498cd6ad" name="Default Changelist" comment="new">
       <change beforePath="$PROJECT_DIR$/src/ArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArrayList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,19 +28,18 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ArrayList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" column="40" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
+            <state relative-caret-position="450">
+              <caret line="30" column="31" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
               <folding>
+                <element signature="e#346#347#0" expanded="true" />
+                <element signature="e#365#366#0" expanded="true" />
                 <element signature="e#111#112#0" expanded="true" />
                 <element signature="e#136#137#0" expanded="true" />
-                <element signature="e#192#193#0" expanded="true" />
-                <element signature="e#222#223#0" expanded="true" />
                 <element signature="e#276#277#0" expanded="true" />
                 <element signature="e#305#306#0" expanded="true" />
-                <element signature="e#413#414#0" expanded="true" />
-                <element signature="e#441#442#0" expanded="true" />
                 <element signature="e#473#474#0" expanded="true" />
                 <element signature="e#498#499#0" expanded="true" />
+                <element signature="e#678#679#0" expanded="true" />
                 <element signature="e#705#706#0" expanded="true" />
               </folding>
             </state>
@@ -153,12 +151,12 @@
       <option name="presentableId" value="Default" />
       <updated>1610665534333</updated>
       <workItem from="1610665540879" duration="1143000" />
-      <workItem from="1610980184936" duration="2585000" />
+      <workItem from="1610980184936" duration="3873000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3728000" />
+    <option name="totallyTimeSpent" value="5016000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1152" y="25" width="1408" height="1335" extended-state="0" />
@@ -200,6 +198,10 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="new" />
+    <option name="LAST_COMMIT_MESSAGE" value="new" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file:///var/folders/m8/vhvvns615vj8396gyzq2wrr00000gn/T/TemporaryItems/NSIRD_screencaptureui_bBznqc/截屏2021-01-15 上午7.08.59.png">
       <provider selected="true" editor-type-id="images" />
@@ -213,19 +215,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="40" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
+        <state relative-caret-position="450">
+          <caret line="30" column="31" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
           <folding>
+            <element signature="e#346#347#0" expanded="true" />
+            <element signature="e#365#366#0" expanded="true" />
             <element signature="e#111#112#0" expanded="true" />
             <element signature="e#136#137#0" expanded="true" />
-            <element signature="e#192#193#0" expanded="true" />
-            <element signature="e#222#223#0" expanded="true" />
             <element signature="e#276#277#0" expanded="true" />
             <element signature="e#305#306#0" expanded="true" />
-            <element signature="e#413#414#0" expanded="true" />
-            <element signature="e#441#442#0" expanded="true" />
             <element signature="e#473#474#0" expanded="true" />
             <element signature="e#498#499#0" expanded="true" />
+            <element signature="e#678#679#0" expanded="true" />
             <element signature="e#705#706#0" expanded="true" />
           </folding>
         </state>
