@@ -7,6 +7,7 @@ public class ArrayList {
     private int[] elements;
 
     private static final int DEFAULT_CAPACITY = 10;
+    private static final int ELEMENT_NOT_FOUND = -1;
 
     public ArrayList(int capacity) {
         capacity = ( capacity < DEFAULT_CAPACITY) ? DEFAULT_CAPACITY : capacity;
@@ -19,7 +20,7 @@ public class ArrayList {
 
     //清除所有元素
      public void clear() {
-
+        size = 0;
      }
 
      //元素的数量
@@ -54,6 +55,18 @@ public class ArrayList {
          return elements[index];
      }
 
+     /*
+     * 设置index位置的元素，返回原来的元素
+     * */
+     public int set(int index,int element){
+        if (index < 0 || index >= size){
+            throw new IndexOutOfBoundsException("index:"+index+"size:"+size);
+        }
+        int old = elements[index];
+        elements[index] = element;
+        return old;
+     }
+
      //在index位置插入一个元素
      public void add(int index,int element){
 
@@ -67,7 +80,10 @@ public class ArrayList {
      }
 
      //查看元素的索引
-     public int indexOf(int element) {//
-         return -1;
+     public int indexOf(int element) {
+         for (int i = 0;i<size;i++){
+             if (elements[i]==element) return i;
+         }
+         return ELEMENT_NOT_FOUND;
      }
 }
