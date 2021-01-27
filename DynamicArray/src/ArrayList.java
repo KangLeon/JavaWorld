@@ -44,7 +44,8 @@ public class ArrayList {
 
      //添加元素到尾部
      public void add(int element) {
-
+        elements[size] = element;
+        size++;
      }
 
      //获取index位置的元素
@@ -69,14 +70,34 @@ public class ArrayList {
 
      //在index位置插入一个元素
      public void add(int index,int element){
+         if (index < 0 || index >= size){
+             throw new IndexOutOfBoundsException("index:"+index+"size:"+size);
+         }
 
+         for (int i = size - 1; i >= index; i--){
+             elements[index] = element;
+         }
+
+         elements[index] = element;
+
+         size++;
      }
 
      /*
      * 删除index位置的元素
      * */
      public int remove(int index){
-         return 0;
+         if (index < 0 || index >= size){
+             throw new IndexOutOfBoundsException("index:"+index+"size:"+size);
+         }
+         int old = elements[index];
+
+         for (int i = index + 1;i <= size -1;i++){
+             elements[i-1] = elements[i];
+         }
+         size--;
+
+         return old;
      }
 
      //查看元素的索引
@@ -86,4 +107,21 @@ public class ArrayList {
          }
          return ELEMENT_NOT_FOUND;
      }
+
+     //打印方法
+    @Override
+    public String toString() {
+        StringBuilder string = new StringBuilder();
+        string.append("size=").append(size).append(",[");
+        for (int i=0;i<size;i++){
+            if (i != 0){
+                string.append(",");
+            }
+
+            string.append(elements[i]);
+        }
+        string.append("]");
+
+        return  string.toString();
+    }
 }
