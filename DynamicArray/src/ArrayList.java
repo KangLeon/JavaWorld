@@ -44,15 +44,12 @@ public class ArrayList {
 
      //添加元素到尾部
      public void add(int element) {
-        elements[size] = element;
-        size++;
+        add(size,element);
      }
 
      //获取index位置的元素
      public int get(int index){
-         if (index<0||index>=size){
-             throw new IndexOutOfBoundsException("index:"+index+"size:"+size);
-         }
+         rangeCheck(index);
          return elements[index];
      }
 
@@ -60,9 +57,7 @@ public class ArrayList {
      * 设置index位置的元素，返回原来的元素
      * */
      public int set(int index,int element){
-        if (index < 0 || index >= size){
-            throw new IndexOutOfBoundsException("index:"+index+"size:"+size);
-        }
+        rangeCheck(index);
         int old = elements[index];
         elements[index] = element;
         return old;
@@ -70,9 +65,7 @@ public class ArrayList {
 
      //在index位置插入一个元素
      public void add(int index,int element){
-         if (index < 0 || index >= size){
-             throw new IndexOutOfBoundsException("index:"+index+"size:"+size);
-         }
+         rangeCheckForAdd(index);
 
          for (int i = size - 1; i >= index; i--){
              elements[index] = element;
@@ -87,9 +80,8 @@ public class ArrayList {
      * 删除index位置的元素
      * */
      public int remove(int index){
-         if (index < 0 || index >= size){
-             throw new IndexOutOfBoundsException("index:"+index+"size:"+size);
-         }
+         rangeCheck(index);
+
          int old = elements[index];
 
          for (int i = index + 1;i <= size -1;i++){
@@ -106,6 +98,22 @@ public class ArrayList {
              if (elements[i]==element) return i;
          }
          return ELEMENT_NOT_FOUND;
+     }
+
+     private void outOfBounds(int index){
+         throw new IndexOutOfBoundsException("index:"+index+"size:"+size);
+     }
+
+     private void rangeCheck(int index){
+         if(index < 0 || index >= size){
+             outOfBounds(index);
+         }
+     }
+
+     private void rangeCheckForAdd(int index){
+         if(index < 0 || index > size){
+             outOfBounds(index);
+         }
      }
 
      //打印方法
