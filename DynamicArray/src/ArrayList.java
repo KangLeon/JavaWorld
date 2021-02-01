@@ -6,7 +6,7 @@ public class ArrayList {
     //所有的元素
     private int[] elements;
 
-    private static final int DEFAULT_CAPACITY = 10;
+    private static final int DEFAULT_CAPACITY = 2;
     private static final int ELEMENT_NOT_FOUND = -1;
 
     public ArrayList(int capacity) {
@@ -67,6 +67,8 @@ public class ArrayList {
      public void add(int index,int element){
          rangeCheckForAdd(index);
 
+         ensureCapacity(size+1);
+
          for (int i = size - 1; i >= index; i--){
              elements[index] = element;
          }
@@ -74,6 +76,22 @@ public class ArrayList {
          elements[index] = element;
 
          size++;
+     }
+
+     //动态扩容
+     private void ensureCapacity(int capacity){
+         int oldCapacity = elements.length;
+         if(oldCapacity >= capacity) return;
+
+         //新容量为旧容量的1.5倍
+         int newCapacity = oldCapacity + (oldCapacity >> 1);
+         int[] newElements = new int[newCapacity];
+         for (int i=0;i<size;i++){
+             newElements[i] = elements[i];
+         }
+         elements = newElements;
+
+         System.out.println("扩容：" + oldCapacity + "_" + newCapacity);
      }
 
      /*
