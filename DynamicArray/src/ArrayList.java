@@ -20,6 +20,9 @@ public class ArrayList<E> {
 
     //清除所有元素
      public void clear() {
+        for (int i=0;i<size;i++){
+            elements[i]=null;
+        }
         size = 0;
      }
 
@@ -28,7 +31,7 @@ public class ArrayList<E> {
         return 0;
      }
 
-     //是否为空 
+     //是否为空
      public boolean isEmpty() {
          if (size == 0){
              return true;
