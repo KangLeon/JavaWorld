@@ -6,7 +6,7 @@ public class ArrayList<E> {
     //所有的元素
     private E[] elements;
 
-    private static final int DEFAULT_CAPACITY = 2;
+    private static final int DEFAULT_CAPACITY = 10;
     private static final int ELEMENT_NOT_FOUND = -1;
 
     public ArrayList(int capacity) {
@@ -28,7 +28,7 @@ public class ArrayList<E> {
         return 0;
      }
 
-     //是否为空
+     //是否为空 
      public boolean isEmpty() {
          if (size == 0){
              return true;
