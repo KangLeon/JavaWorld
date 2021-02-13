@@ -1,17 +1,17 @@
 
-public class ArrayList {
+public class ArrayList<E> {
     //元素的数量
     private int size;
 
     //所有的元素
-    private int[] elements;
+    private E[] elements;
 
     private static final int DEFAULT_CAPACITY = 2;
     private static final int ELEMENT_NOT_FOUND = -1;
 
     public ArrayList(int capacity) {
         capacity = ( capacity < DEFAULT_CAPACITY) ? DEFAULT_CAPACITY : capacity;
-        elements = new int[capacity];
+        elements =(E[]) new Object[capacity];
     }
 
     public ArrayList() {
@@ -38,17 +38,17 @@ public class ArrayList {
      }
 
      //是否包含某个元素
-     public boolean contains(int element) {
+     public boolean contains(E element) {
          return false;
      }
 
      //添加元素到尾部
-     public void add(int element) {
+     public void add(E element) {
         add(size,element);
      }
 
      //获取index位置的元素
-     public int get(int index){
+     public E get(int index){
          rangeCheck(index);
          return elements[index];
      }
@@ -56,15 +56,15 @@ public class ArrayList {
      /*
      * 设置index位置的元素，返回原来的元素
      * */
-     public int set(int index,int element){
+     public E set(int index,E element){
         rangeCheck(index);
-        int old = elements[index];
+        E old = elements[index];
         elements[index] = element;
         return old;
      }
 
      //在index位置插入一个元素
-     public void add(int index,int element){
+     public void add(int index,E element){
          rangeCheckForAdd(index);
 
          ensureCapacity(size+1);
@@ -85,7 +85,7 @@ public class ArrayList {
 
          //新容量为旧容量的1.5倍
          int newCapacity = oldCapacity + (oldCapacity >> 1);
-         int[] newElements = new int[newCapacity];
+         E[] newElements = (E[]) new Object[newCapacity];
          for (int i=0;i<size;i++){
              newElements[i] = elements[i];
          }
@@ -97,11 +97,10 @@ public class ArrayList {
      /*
      * 删除index位置的元素
      * */
-     public int remove(int index){
+     public E remove(int index){
          rangeCheck(index);
 
-         int old = elements[index];
-
+         E old = elements[index];
          for (int i = index + 1;i <= size -1;i++){
              elements[i-1] = elements[i];
          }
@@ -111,7 +110,7 @@ public class ArrayList {
      }
 
      //查看元素的索引
-     public int indexOf(int element) {
+     public int indexOf(E element) {
          for (int i = 0;i<size;i++){
              if (elements[i]==element) return i;
          }
