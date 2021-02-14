@@ -107,7 +107,7 @@ public class ArrayList<E> {
          for (int i = index + 1;i <= size -1;i++){
              elements[i-1] = elements[i];
          }
-         size--;
+         elements[--size] = null;
 
          return old;
      }
