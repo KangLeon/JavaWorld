@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Person {
     private int age;
     private String name;
@@ -16,5 +18,18 @@ public class Person {
         super.finalize();
 
         System.out.println("Person - finalize");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Person)) return false;
+        Person person = (Person) o;
+        return age == person.age;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(age);
     }
 }

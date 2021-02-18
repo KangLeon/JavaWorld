@@ -115,7 +115,7 @@ public class ArrayList<E> {
      //查看元素的索引
      public int indexOf(E element) {
          for (int i = 0;i<size;i++){
-             if (elements[i]==element) return i;
+             if (elements[i].equals(element)) return i;
          }
          return ELEMENT_NOT_FOUND;
      }
