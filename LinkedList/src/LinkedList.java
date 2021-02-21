@@ -20,17 +20,26 @@ public class LinkedList<E> extends AbstractList<E> {
 
     @Override
     public E get(int index) {
-        return null;
+        return node(index).element;
     }
 
     @Override
     public E set(int index, E element) {
-        return null;
+        Node<E> node = node(index);
+        E old = node.element;
+        node.element = element;
+        return old;
     }
 
     @Override
     public void add(int index, E element) {
-
+        if(index==0){
+            first = new Node<>(element,first);
+        }else {
+            Node<E> prev = node(index-1);
+            prev.next = new Node<>(element,prev.next);
+        }
+        size++;
     }
 
     @Override
@@ -41,5 +50,16 @@ public class LinkedList<E> extends AbstractList<E> {
     @Override
     public int indexOf(E element) {
         return 0;
+    }
+
+    //获取index位置节点的对象
+    private Node<E> node(int index){
+        rangeCheck(index);
+
+        Node<E> node=first;
+        for (int i=0;i<index;i++){
+            node = node.next;
+        }
+        return  node;
     }
 }

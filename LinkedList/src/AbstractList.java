@@ -2,22 +2,6 @@ public abstract class AbstractList<E> implements List<E> {
 
     private int size;
 
-    protected void outOfBounds(int index){
-        throw new IndexOutOfBoundsException("index:"+index+"size:"+size);
-    }
-
-    protected void rangeCheck(int index){
-        if(index < 0 || index >= size){
-            outOfBounds(index);
-        }
-    }
-
-    protected void rangeCheckForAdd(int index){
-        if(index < 0 || index > size){
-            outOfBounds(index);
-        }
-    }
-
     public int size() {
         return size;
     }
@@ -32,5 +16,21 @@ public abstract class AbstractList<E> implements List<E> {
 
     public void add(E element) {
         add(size,element);
+    }
+
+    protected void outOfBounds(int index){
+        throw new IndexOutOfBoundsException("index:"+index+"size:"+size);
+    }
+
+    protected void rangeCheck(int index){
+        if(index < 0 || index >= size){
+            outOfBounds(index);
+        }
+    }
+
+    protected void rangeCheckForAdd(int index){
+        if(index < 0 || index > size){
+            outOfBounds(index);
+        }
     }
 }
