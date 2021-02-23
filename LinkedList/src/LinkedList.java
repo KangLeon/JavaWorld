@@ -59,7 +59,22 @@ public class LinkedList<E> extends AbstractList<E> {
     @Override
     public int indexOf(E element) {
 
-        return 0;
+        if (element == null){
+            Node<E> node = first;
+            for (int i=0; i<size;i++){
+                if (node.element == null) return i;
+                node = node.next;
+            }
+        }else {
+            Node<E> node = first;
+            for (int i=0;i<size;i++){
+                if (element.equals(node.element)) return i;
+
+                node = node.next;
+            }
+        }
+
+        return ELEMENT_NOT_FOUND;
     }
 
     //获取index位置节点的对象
@@ -71,5 +86,22 @@ public class LinkedList<E> extends AbstractList<E> {
             node = node.next;
         }
         return  node;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder string = new StringBuilder();
+        string.append("size = ").append(size).append(",[");
+        Node<E> node = first;
+        for (int i=0;i<size;i++){
+            if (i!=0){
+                string.append(",");
+            }
+            string.append(node.element);
+            node = node.next;
+        }
+        string.append("]");
+
+        return string.toString();
     }
 }
