@@ -9,24 +9,38 @@ public class Main {
 
     }
 
-    public boolean isValid(String s){
-        Stack<Character> stack = new Stack<>();
+    private Stack<Integer> inStack = new Stack<>();
+    private Stack<Integer> outStack = new Stack<>();
 
-        int len = s.length();
-        for (int i=0;i<len;i++){
-            char c = s.charAt(i);
-            if (c=='(' || c=='{' || c=='['){
-                stack.push(c);
-            }else {
-                if (stack.isEmpty()) return false;
+    /** Push element x to the back of queue. */
+    public void push(int x) {
+        inStack.push(x);
+    }
 
-                char left = stack.pop();
-                if (left == '(' && c != ')') return false;
-                if (left == '{' && c != '}') return  false;
-                if (left == 'p' && c != ']') return  false;
+    /** Removes the element from in front of queue and returns that element. */
+    public int pop() {
+        checkOutStack();
+
+        return outStack.pop();
+    }
+
+    /** Get the front element. */
+    public int peek() {
+        checkOutStack();
+
+        return outStack.peek();
+    }
+
+    /** Returns whether the queue is empty. */
+    public boolean empty() {
+        return inStack.isEmpty()&&outStack.isEmpty();
+    }
+
+    public void checkOutStack() {
+        if(outStack.isEmpty()){
+            while (!inStack.isEmpty()){
+                outStack.push(inStack.pop());
             }
         }
-
-        return stack.isEmpty();
     }
 }
